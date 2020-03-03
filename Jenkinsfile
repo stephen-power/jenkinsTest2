@@ -11,5 +11,12 @@ pipeline {
                 '''
             }
         }
+        stage('groovy') {
+            steps {
+                sh '''echo "Hello groovy"'''
+                println("test println")
+                sh ''' cat README.md'''
+            }
+        }
     }
 }
