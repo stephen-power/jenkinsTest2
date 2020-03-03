@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '''echo "Hello World"'''
+                script {
+                 fileContent = sh "cat README.md"
+            }
+                sh """echo ${fileContent}"""
                 sh '''echo "Hello again"'''
                 sh '''
                     echo "Multiline shell steps works too"
